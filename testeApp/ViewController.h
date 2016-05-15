@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "MapPin.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
 
+    MKMapView *mapview;
+}
+@property (nonatomic, retain) IBOutlet MKMapView *mapview;
+
+-(IBAction)SetMap:(id)sender;
 
 @end
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB63B1A91CE91AC200797E8F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63B1A81CE91AC200797E8F /* CoreGraphics.framework */; };
+		CB63B1AB1CE91ACE00797E8F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63B1AA1CE91ACE00797E8F /* UIKit.framework */; };
+		CB63B1AF1CE91AF000797E8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63B1AE1CE91AF000797E8F /* Foundation.framework */; };
+		CB63B1B21CE91B1900797E8F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63B1B11CE91B1900797E8F /* MapKit.framework */; };
+		CB63B1B51CE9310100797E8F /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = CB63B1B41CE9310100797E8F /* MapPin.m */; };
 		CB80B6A51CCACCE0004D72FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80B6A41CCACCE0004D72FB /* main.m */; };
 		CB80B6A81CCACCE0004D72FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80B6A71CCACCE0004D72FB /* AppDelegate.m */; };
 		CB80B6AB1CCACCE0004D72FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80B6AA1CCACCE0004D72FB /* ViewController.m */; };
@@ -14,9 +19,16 @@
 		CB80B6B11CCACCE0004D72FB /* testeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB80B6AF1CCACCE0004D72FB /* testeApp.xcdatamodeld */; };
 		CB80B6B31CCACCE0004D72FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB80B6B21CCACCE0004D72FB /* Assets.xcassets */; };
 		CB80B6B61CCACCE0004D72FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB80B6B41CCACCE0004D72FB /* LaunchScreen.storyboard */; };
+		CBC973001CE3B1040099381D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CBC972FF1CE3B1040099381D /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB63B1A81CE91AC200797E8F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CB63B1AA1CE91ACE00797E8F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CB63B1AE1CE91AF000797E8F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CB63B1B11CE91B1900797E8F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CB63B1B31CE9310100797E8F /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		CB63B1B41CE9310100797E8F /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 		CB80B6A01CCACCE0004D72FB /* testeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB80B6A41CCACCE0004D72FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CB80B6A61CCACCE0004D72FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +40,7 @@
 		CB80B6B21CCACCE0004D72FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB80B6B51CCACCE0004D72FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB80B6B71CCACCE0004D72FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBC972FF1CE3B1040099381D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,15 +48,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB63B1AF1CE91AF000797E8F /* Foundation.framework in Frameworks */,
+				CB63B1AB1CE91ACE00797E8F /* UIKit.framework in Frameworks */,
+				CB63B1B21CE91B1900797E8F /* MapKit.framework in Frameworks */,
+				CB63B1A91CE91AC200797E8F /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB63B1B01CE91AFE00797E8F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				CB63B1AE1CE91AF000797E8F /* Foundation.framework */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		CB80B6971CCACCE0004D72FB = {
 			isa = PBXGroup;
 			children = (
+				CB63B1B11CE91B1900797E8F /* MapKit.framework */,
+				CB63B1B01CE91AFE00797E8F /* New Group */,
+				CB63B1AA1CE91ACE00797E8F /* UIKit.framework */,
+				CB63B1A81CE91AC200797E8F /* CoreGraphics.framework */,
 				CB80B6A21CCACCE0004D72FB /* testeApp */,
 				CB80B6A11CCACCE0004D72FB /* Products */,
 			);
@@ -62,6 +91,8 @@
 			children = (
 				CB80B6A61CCACCE0004D72FB /* AppDelegate.h */,
 				CB80B6A71CCACCE0004D72FB /* AppDelegate.m */,
+				CB63B1B31CE9310100797E8F /* MapPin.h */,
+				CB63B1B41CE9310100797E8F /* MapPin.m */,
 				CB80B6A91CCACCE0004D72FB /* ViewController.h */,
 				CB80B6AA1CCACCE0004D72FB /* ViewController.m */,
 				CB80B6AC1CCACCE0004D72FB /* Main.storyboard */,
@@ -70,6 +101,7 @@
 				CB80B6B71CCACCE0004D72FB /* Info.plist */,
 				CB80B6AF1CCACCE0004D72FB /* testeApp.xcdatamodeld */,
 				CB80B6A31CCACCE0004D72FB /* Supporting Files */,
+				CBC972FF1CE3B1040099381D /* Podfile */,
 			);
 			path = testeApp;
 			sourceTree = "<group>";
@@ -113,6 +145,11 @@
 				TargetAttributes = {
 					CB80B69F1CCACCE0004D72FB = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -141,6 +178,7 @@
 			files = (
 				CB80B6B61CCACCE0004D72FB /* LaunchScreen.storyboard in Resources */,
 				CB80B6B31CCACCE0004D72FB /* Assets.xcassets in Resources */,
+				CBC973001CE3B1040099381D /* Podfile in Resources */,
 				CB80B6AE1CCACCE0004D72FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB80B6AB1CCACCE0004D72FB /* ViewController.m in Sources */,
+				CB63B1B51CE9310100797E8F /* MapPin.m in Sources */,
 				CB80B6A81CCACCE0004D72FB /* AppDelegate.m in Sources */,
 				CB80B6A51CCACCE0004D72FB /* main.m in Sources */,
 				CB80B6B11CCACCE0004D72FB /* testeApp.xcdatamodeld in Sources */,

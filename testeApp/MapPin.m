@@ -10,4 +10,6 @@
 
 @implementation MapPin
 
+@synthesize title,subtitle,coordinate;
+
 @end
