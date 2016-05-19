@@ -79,6 +79,17 @@ CLLocationManager *locationManager;
     
 }
 
+-(IBAction):GetLocation:(id)sender{
+    mapview.showsUserLocation = YES;
+}
+
+-(IBAction)Direction:(id)sender{
+    NSString *urlString = @"http://maps.apple.com/maps?dadr=8,-4";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    
+    
+}
+
 -(void)zoomInToMyLocation{
 
     MKCoordinateRegion region = {{0.0,0.0},{0.0,0.0}};
