@@ -6,15 +6,16 @@
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "MapViewController.h"
+#import "AirViewController.h"
 #import "SWRevealViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController ()
+
+@interface AirViewController ()
 
 @end
 
-@implementation MapViewController
+@implementation AirViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,21 +53,22 @@
     //        withObject:nil
     //       afterDelay:5]; //zoom in after 3sec
     MKCoordinateRegion region = {{0.0,0.0},{0.0,0.0}};
-    region.center.latitude = locationManager.location.coordinate.latitude;
-    region.center.longitude = locationManager.location.coordinate.longitude;
-    //region.center.latitude = 40;
-   // region.center.longitude = 39;
-    region.span.longitudeDelta = 2.0f;
-    region.span.latitudeDelta = 2.0f;
+    //region.center.latitude = locationManager.location.coordinate.latitude;
+    //region.center.longitude = locationManager.location.coordinate.longitude;
+    region.center.latitude = 40;
+    region.center.longitude = -8;
+    region.span.longitudeDelta = 0.8f;
+    region.span.latitudeDelta = 0.8f;
     [mapview setRegion:region animated:YES];
     
     
-    // Place a single pin
+    /*
     MapPin *ann = [[MapPin alloc] init];
     ann.coordinate=region.center;
     ann.title = @"You are here!";
     ann.subtitle = @"Aveiro";
     [mapview addAnnotation:ann];
+    */
     
     [self initConstraints];
     [self addAllPins];
@@ -171,10 +173,25 @@ CLLocationManager *locationManager;
 }
 
 
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
+{
+    MKCircleRenderer *circleR = [[MKCircleRenderer alloc] initWithCircle:(MKCircle *)overlay];
+    circleR.fillColor = [[UIColor greenColor] colorWithAlphaComponent:0.2];
+    
+    circleR.strokeColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    circleR.lineWidth = 2;
+    
+    
+    
+    
+    return circleR;
+}
+
+
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSString *name = @"name";
+    //NSString *name = @"name";
     NSString *lenght = [NSString stringWithFormat:@"%02d",[string length]];
     NSMutableArray *arrayNomes = [[NSMutableArray alloc] init];// alloc here
     // Print here
@@ -225,35 +242,27 @@ CLLocationManager *locationManager;
 {
     self.mapview.delegate=self;
     
-    NSArray *name=[[NSArray alloc]initWithObjects:
-                   @"Museu de Aveiro",@"Teatro Aveirense",@"Câmara Municipal",@"Ecomuseu Marinha da Troncalhada",@"Igreja da Vera Cruz",@"Carcavelos bridge ",@"Capela do Senhor das Barrocas",@"Museu Maritimo de Ílhavo ",@"Navio Museu Santo Andre ",@"Museu da Aldeia",@"Costa Nova beach ",@"Sao Jacinto beach ",@"Cruzeiro do Calvario ",@"Estacão de Eirol ",@"Pelourinho de Angeja ",@"Museu Etnografico de Requeixo ",@"Centro Paroquial de Alquerubim ",@"Vagueira", nil];
+    NSArray *name1=[[NSArray alloc]initWithObjects:
+                   @"Meco-Perafita",@"Francisco Sá Carneiro-Campanha",@"João Gomes Laranjo-S.Hora",nil];
     
     
-    NSMutableArray *arrCoordinateStr = [[NSMutableArray alloc] initWithCapacity:name.count];
+    NSMutableArray *arrCoordinateStr = [[NSMutableArray alloc] initWithCapacity:name1.count];
     
-    [arrCoordinateStr addObject:@"40.6390270000, -8.6510780000"];
-    [arrCoordinateStr addObject:@"40.6400962000, -8.6540924000"];
-    [arrCoordinateStr addObject:@"40.6402512000, -8.6536099000"];
-    [arrCoordinateStr addObject:@"40.6411860000, -8.6536170000"];
-    [arrCoordinateStr addObject:@"40.6431480000, -8.6530540000"];
-    [arrCoordinateStr addObject:@"40.6452810000, -8.6546190000"];
-    [arrCoordinateStr addObject:@"40.6473330000, -8.6536099000"];
-    [arrCoordinateStr addObject:@"40.6043740000, -8.6662710000"];
-    [arrCoordinateStr addObject:@"40.6414589000, -8.7302852000"];
-    [arrCoordinateStr addObject:@"40.6073120000, -8.6536099000"];
-    [arrCoordinateStr addObject:@"40.6162654098, -8.7535715103"];
-    [arrCoordinateStr addObject:@"40.6686929214, -8.7467908859"];
-    [arrCoordinateStr addObject:@"40.6741920000, -8.5562612000"];
-    [arrCoordinateStr addObject:@"40.6094459000, -8.5315861000"];
-    [arrCoordinateStr addObject:@"40.6781700000, -8.5568212000"];
-    [arrCoordinateStr addObject:@"40.5957270000, -8.5357660000"];
-    [arrCoordinateStr addObject:@"40.6208577000, -8.5093618000"];
-    [arrCoordinateStr addObject:@"40.5580343000, -8.7449993000"];
+    [arrCoordinateStr addObject:@"41.232, -8.712"];
+    [arrCoordinateStr addObject:@"41,164, -8.59"];
+    [arrCoordinateStr addObject:@"41,184, -8.662"];
     
     
-    for(int i = 0; i < name.count; i++)
+    
+    CLLocationDistance fenceDistance = 2000;
+    CLLocationCoordinate2D circleMiddlePoint = CLLocationCoordinate2DMake(41.232, -8.712);
+    MKCircle *circle = [MKCircle circleWithCenterCoordinate:circleMiddlePoint radius:fenceDistance];
+    [mapview addOverlay: circle];
+    
+    
+    for(int i = 0; i < name1.count; i++)
     {
-        [self addPinWithTitle:name[i] AndCoordinate:arrCoordinateStr[i]];
+        [self addPinWithTitle:name1[i] AndCoordinate:arrCoordinateStr[i]];
     }
 }
 
@@ -295,6 +304,7 @@ CLLocationManager *locationManager;
     [mapview setRegion:region animated:YES];
     
 }
+
 
 
 

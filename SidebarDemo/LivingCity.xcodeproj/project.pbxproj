@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B5D32751D1F5353003A059F /* AirViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D32741D1F5353003A059F /* AirViewController.m */; };
 		5B66DDC61D1DC03D00963B6E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B66DDC51D1DC03D00963B6E /* Info.plist */; };
 		5B66DDC91D1DC17700963B6E /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66DDC81D1DC17700963B6E /* MapPin.m */; };
 		5B66DDD31D1EE4E900963B6E /* UUChart in Resources */ = {isa = PBXBuildFile; fileRef = 5B66DDD21D1EE4E900963B6E /* UUChart */; };
@@ -53,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B5D32731D1F5353003A059F /* AirViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirViewController.h; sourceTree = "<group>"; };
+		5B5D32741D1F5353003A059F /* AirViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirViewController.m; sourceTree = "<group>"; };
 		5B66DDC51D1DC03D00963B6E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B66DDC71D1DC17700963B6E /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
 		5B66DDC81D1DC17700963B6E /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				F4EECF6D177FD51300778578 /* MapViewController.m */,
 				F4EECF73177FF90500778578 /* PhotoViewController.h */,
 				F4EECF74177FF90600778578 /* PhotoViewController.m */,
+				5B5D32731D1F5353003A059F /* AirViewController.h */,
+				5B5D32741D1F5353003A059F /* AirViewController.m */,
 				5B66DDD41D1EE9C700963B6E /* ViewController.h */,
 				5B66DDD51D1EE9C700963B6E /* ViewController.m */,
 				F4EECF34177C9A1E00778578 /* Library */,
@@ -329,6 +334,7 @@
 				F4D9AD1F1871725500E2D912 /* SWRevealViewController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
+				5B5D32751D1F5353003A059F /* AirViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
