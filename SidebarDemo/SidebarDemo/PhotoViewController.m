@@ -46,7 +46,7 @@
 #pragma mark - UITableView Datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -73,7 +73,7 @@
     UILabel *label = [[UILabel alloc]initWithFrame:frame];
     label.font = [UIFont systemFontOfSize:15];
     label.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.3];
-    label.text = @"27/06/2016";
+    label.text = section ? @"Humidity - 27/06/2016":@"Temperature - 27/06/2016";
     label.textColor = [UIColor colorWithRed:0.257 green:0.650 blue:0.478 alpha:1.000];
     label.textAlignment = NSTextAlignmentCenter;
     return label;

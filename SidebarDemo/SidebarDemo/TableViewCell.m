@@ -46,15 +46,32 @@
 
 - (NSArray *)chartConfigAxisXLabel:(UUChart *)chart
 {
+    
     return [self getXTitles:11];
+    
+    
 }
 
 
 - (NSArray *)chartConfigAxisYValue:(UUChart *)chart
 {
     NSArray *ary = @[@"22",@"23",@"22",@"23",@"23",@"22",@"24",@"25",@"26",@"28",@"29"];
-
+    NSArray *ary1 = @[@"11",@"12",@"11",@"10",@"11",@"12",@"14",@"15",@"14",@"12",@"11"];
+    
+    switch (path.section) {
+        case 0:
+            return @[ary];
+        case 1:
+            return @[ary1];
+        default:
+            break;
+    }
+    
+    
     return @[ary];
+    
+    
+    
 }
 
 
@@ -65,7 +82,18 @@
 
 - (CGRange)chartRange:(UUChart *)chart
 {
-    return CGRangeMake(50, 1);
+    
+    switch (path.section) {
+        case 0:
+            return CGRangeMake(49, -5);
+        case 1:
+            return CGRangeMake(100, 0);
+        default:
+            break;
+    }
+    
+    
+    return CGRangeMake(100, 0);
 
 }
 
