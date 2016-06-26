@@ -242,27 +242,35 @@ CLLocationManager *locationManager;
 {
     self.mapview.delegate=self;
     
-    NSArray *name1=[[NSArray alloc]initWithObjects:
-                   @"Meco-Perafita",@"Francisco Sá Carneiro-Campanha",@"João Gomes Laranjo-S.Hora",nil];
+    NSArray *name2=[[NSArray alloc]initWithObjects:
+                   @"Meco-Perafita",@"Francisco Sá Carneiro-Campanha",@"João Gomes Laranjo-S.Hora",@"Alfragide/Amadora",@"Alverca",@"Anta-Espinho",@"Arcos",@"Aveiro",@"Avenida da Liberdade",@"Avintes",@"Santo Tirso",@"Cascais-Mercado",@"Chamusca",@"Coimbra/Avenida Fernao Magalhaes",@"D.Manuel II-Vermoim",@"Douro Norte",@"Ervedeira",@"Escavadeira",@"Estarreja/Teixugueira",@"Palmela",@"Fornelo do Monte",@"Fr Bartolomeu M·rtires-S.Vitor",@"Francisco S· Carneiro",@"Frossos-Braga",nil];
+
     
     
-    NSMutableArray *arrCoordinateStr = [[NSMutableArray alloc] initWithCapacity:name1.count];
+    NSMutableArray *arrCoordinateStr2 = [[NSMutableArray alloc] initWithCapacity:name2.count];
     
-    [arrCoordinateStr addObject:@"41.232, -8.712"];
-    [arrCoordinateStr addObject:@"41,164, -8.59"];
-    [arrCoordinateStr addObject:@"41,184, -8.662"];
+    [arrCoordinateStr2 addObject:@"41.232, -8.712"];[arrCoordinateStr2 addObject:@"41,164, -8.59"]; [arrCoordinateStr2 addObject:@"41,184, -8.662"]; [arrCoordinateStr2 addObject:@"38.738, -9.208"];[arrCoordinateStr2 addObject:@"38.896, -9.04"];[arrCoordinateStr2 addObject:@"41.006, -8.643"];[arrCoordinateStr2 addObject:@"38.529, -8.894"];[arrCoordinateStr2 addObject:@"40.636, -8.647"];[arrCoordinateStr2 addObject:@"38.719, -9.148"];[arrCoordinateStr2 addObject:@"41.097, -8.556"];[arrCoordinateStr2 addObject:@"41.346, -8.477"];[arrCoordinateStr2 addObject:@"38.7, -9.423"];[arrCoordinateStr2 addObject:@"39.353, -8.468"];[arrCoordinateStr2 addObject:@"40.216, -8.434"];[arrCoordinateStr2 addObject:@"41.237, -8.618"];[arrCoordinateStr2 addObject:@"41.37, -7.789"];[arrCoordinateStr2 addObject:@"39.922, -8.893"];[arrCoordinateStr2 addObject:@"38.661, -9.067"];[arrCoordinateStr2 addObject:@"40.75, -8.583"];[arrCoordinateStr2 addObject:@"38.636, -8.691"];[arrCoordinateStr2 addObject:@"40.64, -8.1"];[arrCoordinateStr2 addObject:@"41.55, -8.406"];[arrCoordinateStr2 addObject:@"41.164, -8.59"];[arrCoordinateStr2 addObject:@"41.566, -8.454"];
     
+    for(int i=0;i<name2.count;i++){
+        CLLocationDistance fenceDistance = 3000;
+        
+        arrCoordinateStr2[i] = [arrCoordinateStr2[i] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        
+        // convert string into actual latitude and longitude values
+        NSArray *components = [arrCoordinateStr2[i] componentsSeparatedByString:@","];
+        
+        double latitude = [components[0] doubleValue];
+        double longitude = [components[1] doubleValue];
+        
+        // setup the map pin with all data and add to map view
+        CLLocationCoordinate2D circleMiddlePoint = CLLocationCoordinate2DMake(latitude, longitude);
+        MKCircle *circle = [MKCircle circleWithCenterCoordinate:circleMiddlePoint radius:fenceDistance];
+        [mapview addOverlay: circle];
+    }
     
-    
-    CLLocationDistance fenceDistance = 2000;
-    CLLocationCoordinate2D circleMiddlePoint = CLLocationCoordinate2DMake(41.232, -8.712);
-    MKCircle *circle = [MKCircle circleWithCenterCoordinate:circleMiddlePoint radius:fenceDistance];
-    [mapview addOverlay: circle];
-    
-    
-    for(int i = 0; i < name1.count; i++)
+    for(int i = 0; i < name2.count; i++)
     {
-        [self addPinWithTitle:name1[i] AndCoordinate:arrCoordinateStr[i]];
+        [self addPinWithTitle:name2[i] AndCoordinate:arrCoordinateStr2[i]];
     }
 }
 

@@ -7,7 +7,6 @@
 //
 
 #import "UUChart.h"
-
 @interface UUChart ()
 
 @property (strong, nonatomic) UULineChart * lineChart;
